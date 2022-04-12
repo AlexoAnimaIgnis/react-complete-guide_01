@@ -1,4 +1,5 @@
 import ExpenseDate from './ExpenseDate';
+import Card from './Card';
 import './ExpenseItem.css'; // tells built process that css file should be considered
 
 
@@ -11,13 +12,13 @@ function ExpenseItem(props) {
 
     // react rule: you must only have one root element per JSX code snippet
     return (
-        <div className='expense-item'>
+        <Card className='expense-item'>
             <ExpenseDate date={props.date}/>
             <div className='expense-item__description'>
                 <h2>{props.title}</h2>
                 <div className='expense-item__price'>${props.amount}</div>
             </div>
-        </div>
+        </Card>
     );
 }
 
