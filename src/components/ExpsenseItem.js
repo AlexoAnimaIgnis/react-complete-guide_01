@@ -2,20 +2,17 @@ import './ExpenseItem.css'; // tells built process that css file should be consi
 
 /**
  * A component in react is just a javascript function which return an HTML code (JSx)
+ * @param {*} props one object which holds all the received attribute (we can get key-value pairs)
  * @returns 
  */
-function ExpenseItem() {
-
-    const expenseDate = new Date(2022, 4, 12);
-    const expenseTitle = 'Car Insurance';
-    const expenseAmount = 2000;
+function ExpenseItem(props) {
     // react rule: you must only have one root element per JSX code snippet
     return (
         <div className='expense-item'>
-            <div>{expenseDate.toISOString()}</div>
+            <div>{props.date.toISOString()}</div>
             <div className='expense-item__description'>
-                <h2>{expenseTitle}</h2>
-                <div className='expense-item__price'>${expenseAmount}</div>
+                <h2>{props.title}</h2>
+                <div className='expense-item__price'>${props.amount}</div>
             </div>
         </div>
     );
