@@ -5,13 +5,17 @@ import './ExpenseItem.css'; // tells built process that css file should be consi
  * @returns 
  */
 function ExpenseItem() {
+
+    const expenseDate = new Date(2022, 4, 12);
+    const expenseTitle = 'Car Insurance';
+    const expenseAmount = 2000;
     // react rule: you must only have one root element per JSX code snippet
     return (
         <div className='expense-item'>
-            <div>April 11, 2022</div>
+            <div>{expenseDate.toISOString()}</div>
             <div className='expense-item__description'>
-                <h2>Car Insurance</h2>
-                <div className='expense-item__price'>$2900.00</div>
+                <h2>{expenseTitle}</h2>
+                <div className='expense-item__price'>${expenseAmount}</div>
             </div>
         </div>
     );
